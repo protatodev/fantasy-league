@@ -5,13 +5,10 @@ export class Fantasy {
   }
 
   getPlayerStats(season, week, position, sort) {
+
     return new Promise((resolve, reject) => {
-
       let request = new XMLHttpRequest();
-      let url = `https://api.fantasydata.net/v3/nfl/stats/JSON/GameLeagueLeaders/2017/12/QB/FantasyPoints`;
-      console.log(process.env.API_KEY);
-
-
+      let url = `https://api.fantasydata.net/v3/nfl/stats/JSON/GameLeagueLeaders/${season}/${week}/${position}/${sort}`;
 
       request.onload = function() {
         if(request.status == 200) {

@@ -1,3 +1,39 @@
 body {
-  background-color: #fffff0;
+  background-color: #4495D1;
+  color: #BBC4CA;
+  text-shadow:
+  -1px -1px 0 #002A5C,
+		1px -1px 0 #002A5C,
+		-1px 1px 0 #002A5C,
+		1px 1px 0 #002A5C;
 }
+
+.jumbotron {
+  border: 1px solid black;
+}
+
+#statsTable {
+  padding: 10px;
+  margin-top: 50px;
+  width: 100%;
+}
+
+#statsTable td {
+  border: 2px solid #002A5C;
+  text-align: center;
+  table-layout: fixed;
+}
+
+th {
+  color: #DA2128;
+  border: 2px solid #002A5C;
+  text-align: center;
+  table-layout: fixed;
+}
+
+
+
+/* #002A5C
+#4495D1
+#DA2128
+#BBC4CA */

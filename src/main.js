@@ -4,12 +4,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import {Fantasy} from './fantasy.js';
 
-function displayStats() {
+function displayStats(year,week,position) {
   let fantasyGame = new Fantasy();
-  let promise = fantasyGame.getPlayerStats("2017", "12", "QB", "FanstasyPoints");
-
+  let promise = fantasyGame.getPlayerStats(year, week, position, "FantasyPoints");
   promise.then(stats => {
-    console.log(stats);
+    let newStats = JSON.parse(stats);
+
+    for(let i = 0; i < 10; i++) {
+      $("#statsTable").append(`<tr><td>${newStats[i].Name}</td>
+                                   <td>${newStats[i].Team}</td></tr>`);
+    }
+
+    console.log(newStats);
+    console.log(newStats[0].Name);
   }, error => {
     console.log(error);
   });
@@ -17,6 +24,12 @@ function displayStats() {
 
 $(document).ready(function() {
 
-  displayStats();
+  $("#entryForm").submit((event) => {
+    event.preventDefault();
+    let season = $("#season").val();
+    let week = $("#week").val();
+    let position = $("#position").val();
+    displayStats(season, week, position);
+  });
 
 });
