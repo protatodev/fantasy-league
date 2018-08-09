@@ -1,20 +1,12 @@
 body {
   background-color: #4495D1;
-  color: #BBC4CA;
-  text-shadow:
-  -1px -1px 0 #002A5C,
-		1px -1px 0 #002A5C,
-		-1px 1px 0 #002A5C,
-		1px 1px 0 #002A5C;
-}
-
-.jumbotron {
-  border: 1px solid black;
+  color: white;
 }
 
 #statsTable {
   padding: 10px;
   margin-top: 50px;
+  margin-bottom: 50px;
   width: 100%;
 }
 
@@ -25,15 +17,27 @@ body {
 }
 
 th {
-  color: #DA2128;
+  color: black;
   border: 2px solid #002A5C;
   text-align: center;
   table-layout: fixed;
 }
 
+.playerDiv .jumbotron {
+ color: black;
+ border: 2px solid black;
+}
 
+.nameClickable {
+  transition: 1s;
+  color: beige;
+  background-color: grey;
+  font-weight: bold;
+  text-decoration: underline;
+}
 
-/* #002A5C
-#4495D1
-#DA2128
-#BBC4CA */
+.nameClickable:hover {
+  transition: 1s;
+  color: aqua;
+  cursor: pointer;
+}
