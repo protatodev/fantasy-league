@@ -20,8 +20,6 @@ function fetchPlayer(playerID) {
     document.getElementById("playerWeight").innerHTML = newPlayer.Weight;
     document.getElementById("playerBirthdate").innerHTML = newPlayer.BirthDate;
 
-
-
   }, error => {
     console.log(error);
   });
@@ -30,7 +28,7 @@ function fetchPlayer(playerID) {
 function displayStats(year,week,position) {
   let fantasyGame = new Fantasy();
   let promise = fantasyGame.getPlayerStats(year, week, position, "FantasyPoints");
-  
+
   promise.then(stats => {
     let newStats = JSON.parse(stats);
 
